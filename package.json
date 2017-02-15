@@ -5,10 +5,16 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "test": "ng test",
+    "start:dev": "ng serve",
+    "start": "node server.js",
+    "test": "ng test --watch false",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "build": "ng build -aot --prod --output-path ./public",
+    "postinstall": "npm run build"
+  },
+  "engines": {
+    "node": "6.9.x",
+    "npm": "3.10.x"
   },
   "private": true,
   "dependencies": {
