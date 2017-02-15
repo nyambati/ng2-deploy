@@ -1,0 +1,37 @@
+<div class="row">
+
+  <div class="col-xs-12 col-sm-6">
+
+    <ul class="list-group">
+
+      <li class="list-group-item"
+        *ngFor="let todo of todos"
+        (click)="active = todo"
+        [class.complete]="todo.complete"
+      >
+        <span class="glyphicon glyphicon-flag" *ngIf="todo.flagged"></span>
+        {{ todo.task || '&nbsp;'}}
+      </li>
+
+      <li class="list-group-item list-group-item-success"
+        id="my-new-todo"
+        (click)="createNew()"
+      >
+        <span class="glyphicon glyphicon-plus"></span>
+        Create New
+      </li>
+
+    </ul>
+
+  </div>
+
+  <div class="col-xs-12 col-sm-6" id="my-todo-detail">
+    <div class="well" *ngIf="active">
+      <app-todo-editor [(todo)]="active"></app-todo-editor>
+    </div>
+
+    <div class="well" *ngIf="!active">
+      Select a todo or create a new one!
+    </div>
+  </div>
+</div>
