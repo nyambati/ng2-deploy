@@ -1,0 +1,5 @@
+heroku_api_key="your heroku api key"
+heroku_email="your email address"
+heroku_app_region="us"
+heroku_app_name="angular-app-deploy"
+node_env="production"

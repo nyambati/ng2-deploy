@@ -6,7 +6,6 @@ provider "heroku" {
   api_key = "${ var.heroku_api_key }"
 }
 
-
 resource "heroku_app" "app" {
   name = "${ var.heroku_app_name }"
   region = "${ var.heroku_app_region }"
@@ -25,4 +24,7 @@ output "host_name" {
 
 output "web_urk" {
   value = "${ heroku_app.app.web_url }"
+}
+output "git" {
+  value = "${heroku_app.app.git_url}"
 }
